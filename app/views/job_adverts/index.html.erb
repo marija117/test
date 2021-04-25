@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Adverts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Employer</th>
+      <th>Employer email</th>
+      <th>Category</th>
+      <th>Expiration date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @job_adverts.each do |advert| %>
+      <tr>
+        <td><%= advert.title %></td>
+        <td><%= advert.description %></td>
+        <td><%= advert.employer %></td>
+        <td><%= advert.employer_email %></td>
+        <td><%= advert.category %></td>
+        <td><%= advert.expiration_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
