@@ -1,8 +1,12 @@
 class JobAdvertsController < ApplicationController
-    before_action :set_job_advert
+    before_action :set_job_advert, only: [:show]
 
     def index
       @job_adverts = JobAdvert.all
+    end
+
+    def show
+        render json: @job_advert
     end
 
     private
