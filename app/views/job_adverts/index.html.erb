@@ -2,22 +2,23 @@
 
 <h1>Adverts</h1>
 
-<table>
+<table class="table table-striped table-hover">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Employer</th>
-      <th>Employer email</th>
-      <th>Category</th>
-      <th>Expiration date</th>
-      <th colspan="3"></th>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Employer</th>
+      <th scope="col">Employer email</th>
+      <th scope="col">Category</th>
+      <th scope="col">Expiration date</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @job_adverts.each do |advert| %>
+    <% @job_adverts.each.with_index  do |advert, index| %>
       <tr>
+        <th scope="row">index</th>
         <td><%= advert.title %></td>
         <td><%= advert.description %></td>
         <td><%= advert.employer %></td>
@@ -28,5 +29,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
