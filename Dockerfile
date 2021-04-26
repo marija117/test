@@ -1,12 +1,16 @@
 # syntax=docker/dockerfile:1
 FROM ruby:2.6.5
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg -o /root/yarn-pubkey.gpg && apt-key add /root/yarn-pubkey.gpg
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
+
+RUN apt-get update -qq && apt-get install -y nodejs yarn postgresql-client
 
 RUN mkdir -p /usr/src/test-app
 WORKDIR /test-app
 COPY Gemfile /test-app/Gemfile
 COPY Gemfile.lock /test-app/Gemfile.lock
 RUN bundle install
+RUN yarn install
 # Copy app files
 RUN mkdir -p /usr/src/test-app/tmp/pids
 ADD . /usr/src/test-app/
