@@ -5,7 +5,7 @@ JobAdvert.create([
       employer: "Vennage",
       employer_email: "info@vennage.com",
       category: "IT",
-      expiration_date: "01.06.2021".
+      expiration_date: "01.06.2021"
     },
     {
         title: "Project Manager",
@@ -13,7 +13,7 @@ JobAdvert.create([
         employer: "IBM",
         employer_email: "info@ibm.com",
         category: "IT",
-        expiration_date: "07.06.2021".
+        expiration_date: "07.06.2021"
     },
     {
         title: " React Developer",
@@ -21,7 +21,7 @@ JobAdvert.create([
         employer: "Marriott",
         employer_email: "info@marriot.com",
         category: "IT",
-        expiration_date: "17.07.2021".
+        expiration_date: "17.07.2021"
     },
     {
         title: "Bartender",
@@ -29,7 +29,7 @@ JobAdvert.create([
         employer: "Dallas Restaurant",
         employer_email: "info@dallas.com",
         category: "Catering",
-        expiration_date: "25.05.2021".
+        expiration_date: "25.05.2021"
     },
     {
         title: "Chef",
@@ -37,6 +37,6 @@ JobAdvert.create([
         employer: "Mademoiselle",
         employer_email: "info@mademoiselle.com",
         category: "Catering",
-        expiration_date: "25.06.2021".
+        expiration_date: "25.06.2021"
     }
   ])

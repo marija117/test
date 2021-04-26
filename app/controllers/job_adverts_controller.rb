@@ -6,16 +6,15 @@ class JobAdvertsController < ApplicationController
     end
 
     def show
-        render json: @job_advert
     end
 
     private
-      def set_job_advert
-        @job_advert = JobAdvert.find(params[:id]) if params[:id]
-      end
 
-      def job_advert_params
+    def set_job_advert
+        @job_advert = JobAdvert.find(params[:id]) if params[:id]
+    end
+
+    def job_advert_params
         params.permit(:title, :description, :employer, :employer_email, :category, :expiration_date)
-      end
-  end
+    end
 end
