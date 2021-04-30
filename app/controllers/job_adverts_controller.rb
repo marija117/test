@@ -1,5 +1,5 @@
 class JobAdvertsController < ApplicationController
-    before_action :set_job_advert, only: [:show, :update]
+    before_action :set_job_advert, only: [:show, :update, :destroy]
 
     def index
       @job_adverts = JobAdvert.all
@@ -30,6 +30,12 @@ class JobAdvertsController < ApplicationController
             redirect_to @job_advert
         else
             render :edit
+        end
+    end
+
+    def destroy
+        @job_advert.destroy
+          redirect_to adverts_url
         end
     end
 
