@@ -8,6 +8,8 @@ class JobApplicationsController < ApplicationController
     
         if @job_application.save
             JobApplicationMailer.with(job_application: @job_application).new_job_application_email.deliver_later
+            JobAdvertMailer.with(job_advert: @job_advert, job_application: @job_application).new_job_advert_email.deliver_later
+
             redirect_to @job_application
         else
             render :new
