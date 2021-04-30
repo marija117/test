@@ -1,5 +1,5 @@
 class JobAdvertsController < ApplicationController
-    before_action :set_job_advert, only: [:show]
+    before_action :set_job_advert, only: [:show, :update]
 
     def index
       @job_adverts = JobAdvert.all
@@ -12,6 +12,9 @@ class JobAdvertsController < ApplicationController
       @advert = Advert.new
     end
 
+    def edit
+    end
+
     def create
         @job_advert = JobAdvert.new(job_advert_params)
     
@@ -19,6 +22,14 @@ class JobAdvertsController < ApplicationController
             redirect_to @job_advert
         else
             render :new
+        end
+    end
+
+    def update
+        if @job_advert.update(job_advert_params)
+            redirect_to @job_advert
+        else
+            render :edit
         end
     end
 
