@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    
+    <p>You have successfully applied for the position <%= @job_advert.title %>!</p>
+    <p>
+    You can see job advert details in this mail<br>
+    --------------------------
+    </p>
+    <p>Title: <%= @job_advert.title %></p>
+    <p>Description: <%= @job_advert.description %></p>
+    <p>Employer: <%= @job_advert.employer %></p>
+    <p>Employer email: <%= @job_advert.employer_email %></p>
+    <p>Category: <%= @job_advert.category %></p>
+    <p>Expiration date: <%= @job_advert.expiration_date %></p>
+  
+  </body>
+</html>
