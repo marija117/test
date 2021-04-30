@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>You got a new application for a job <%= @job_application.job_advert.title %> from <%= @job_application.applicant_full_name %>!</p>
+    <p>
+    Job application<br>
+    --------------------------
+    </p>
+    <p>Applicant full name: <%= @job_application.applicant_full_name %></p>
+    <p>Date of birth: <%= @job_application.date_of_birth %></p>
+    <p>Email: <%= @job_application.email %></p>
+    <p>Phone number: <%= @job_application.phone_number %></p>
+    <p>Address: <%= @job_application.address %></p>
+    <p>Qualification: <%= @job_application.qualification %></p>
+    <p>
+  
+    </p>
+  </body>
+</html>
