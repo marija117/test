@@ -59,6 +59,7 @@
   <div class="mb-3">
     <label for="qualification" class="form-label">Qualification</label>
     <input type="text" class="form-control" name=job_application[qualification] id="job_application_qualification">
+    <%= hidden_field_tag(:job_advert_id,  @job_advert.id) %>
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
