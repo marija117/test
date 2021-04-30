@@ -1,4 +1,5 @@
-You got a new job_application from <%= @job_application.email %>!
+You got a new application for a job <%= @job_application.job_advert.title %> from <%= @job_application.applicant_full_name %>!
+
 ===============================================
 
 Job Application Details:
@@ -10,5 +11,3 @@ Email: <%= @job_application.email %>
 Phone number: <%= @job_application.phone_number %>
 Address: <%= @job_application.address %>
 Qualification: <%= @job_application.qualification %>
-
-Message:
