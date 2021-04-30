@@ -7,6 +7,20 @@ class JobAdvertsController < ApplicationController
 
     def show
     end
+  
+    def new
+      @advert = Advert.new
+    end
+
+    def create
+        @job_advert = JobAdvert.new(job_advert_params)
+    
+        if @job_advert.save
+            redirect_to @job_advert
+        else
+            render :new
+        end
+    end
 
     private
 
