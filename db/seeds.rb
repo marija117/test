@@ -59,5 +59,21 @@ JobAdvert.create([
         employer_email: "info@mademoiselle.com",
         category: "Catering",
         expiration_date: "25.06.2021"
+    },
+    {
+        title: "Housekeeper",
+        description: "Responsible for keeping rooms and public spaces clean and sanitary for guests.",
+        employer: "Hayat",
+        employer_email: "info@hayat.com",
+        category: "Catering",
+        expiration_date: "25.07.2021"
+    },
+    {
+        title: "Bartender",
+        description: "Taking beverage orders from customers or wait staff and serving drinks as requested, paying extreme attention to detail. Satisfying patron requests in a timely manner.",
+        employer: "Loft",
+        employer_email: "info@loft.com",
+        category: "Catering",
+        expiration_date: "25.06.2021"
     }
 ])

@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Job Applications</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Applicant full name</th>
+      <th scope="col">Date of birth</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone number</th>
+      <th scope="col">Address</th>
+      <th scope="col">Qualification</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @job_applications.each  do |application| %>
+      <tr>
+        <th scope="row"><%= application.id %></th>
+        <td><%= application.applicant_full_name %></td>
+        <td><%= application.date_of_birth %></td>
+        <td><%= application.email %></td>
+        <td><%= application.phone_number %></td>
+        <td><%= application.address %></td>
+        <td><%= application.qualification %></td>
+        <td><%= link_to 'Show', application %></td>
+        <td><%= link_to 'Edit', edit_job_application_path(application) %></td>
+        <td><%= link_to 'Destroy', application, method: :delete, data: { confirm: 'Are you sure?' } %></td>   
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<p><%= paginate @job_applications %></p>

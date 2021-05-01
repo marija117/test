@@ -3,6 +3,11 @@ class JobApplicationsController < ApplicationController
     before_action :set_job_application, only: [:show]
     before_action :set_job_advert, only: [:create]
 
+    
+    def index
+        @job_applications = JobApplication.page(params[:page]).per(5)
+    end 
+
     def create
         @job_application = @job_advert.job_applications.create(job_application_params)
     
