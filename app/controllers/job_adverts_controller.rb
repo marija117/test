@@ -1,4 +1,5 @@
 class JobAdvertsController < ApplicationController
+    before_action :authenticate_user!
     before_action :set_job_advert, only: [:show, :update, :destroy]
 
     def index
