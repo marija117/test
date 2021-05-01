@@ -2,7 +2,7 @@
 
 <h1>Adverts</h1>
 
-<table class="table table-striped table-hover">
+<table class="table table-hover">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -12,19 +12,23 @@
       <th scope="col">Employer email</th>
       <th scope="col">Category</th>
       <th scope="col">Expiration date</th>
+      <th colspan="3">Actions</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @job_adverts.each.with_index  do |advert, index| %>
+    <% @job_adverts.each  do |advert| %>
       <tr>
-        <th scope="row">index</th>
+        <th scope="row"><%= advert.id %></th>
         <td><%= advert.title %></td>
         <td><%= advert.description %></td>
         <td><%= advert.employer %></td>
         <td><%= advert.employer_email %></td>
         <td><%= advert.category %></td>
-        <td><%= advert.expiration_date %></td>
+        <td><%= advert.expiration_date.strftime("%d/%m/%Y") %></td>
+        <td><%= link_to 'Show', advert %></td>
+        <td><%= link_to 'Edit', edit_job_advert_path(advert) %></td>
+        <td><%= link_to 'Destroy', advert, method: :delete, data: { confirm: 'Are you sure?' } %></td>   
       </tr>
     <% end %>
   </tbody>

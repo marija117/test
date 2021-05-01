@@ -35,8 +35,8 @@ class JobAdvertsController < ApplicationController
 
     def destroy
         @job_advert.destroy
-          redirect_to adverts_url
-        end
+        
+        redirect_to adverts_url
     end
 
     private
