@@ -25,6 +25,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Use devise for authentication
 gem 'devise'
 
+# Use kaminari for pagination
+gem 'kaminari'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

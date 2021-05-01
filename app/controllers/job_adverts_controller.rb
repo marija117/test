@@ -2,7 +2,7 @@ class JobAdvertsController < ApplicationController
     before_action :set_job_advert, only: [:show, :update, :destroy]
 
     def index
-      @job_adverts = JobAdvert.all
+      @job_adverts = JobAdvert.page(params[:page]).per(5)
     end
 
     def show
