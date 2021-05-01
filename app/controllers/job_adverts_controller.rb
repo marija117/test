@@ -1,6 +1,6 @@
 class JobAdvertsController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_job_advert, only: [:show, :update, :destroy]
+    before_action :set_job_advert, only: [:show, :edit, :update, :destroy]
 
     def index
       @job_adverts = JobAdvert.page(params[:page]).per(5)
@@ -10,7 +10,7 @@ class JobAdvertsController < ApplicationController
     end
   
     def new
-      @advert = Advert.new
+      @job_advert = JobAdvert.new
     end
 
     def edit
