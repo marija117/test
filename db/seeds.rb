@@ -1,11 +1,32 @@
+User.create!([
+    {
+        full_name: "John Doe",
+        email: "john@doe.com",
+        password: "12345678",
+        password_confirmation: "12345678"
+    },
+    {
+        full_name: "Joe Smith",
+        email: "joe@amith.com",
+        password: "12345678",
+        password_confirmation: "12345678"
+    },
+    {
+        full_name: "Jane Doe",
+        email: "jane@doe.com",
+        password: "12345678",
+        password_confirmation: "12345678"
+    }
+])
+
 JobAdvert.create([
     {
-      title: "Developer",
-      description: "A front-end developer specializes in building the front end, or client-side, of a web appkication.",
-      employer: "Vennage",
-      employer_email: "info@vennage.com",
-      category: "IT",
-      expiration_date: "01.06.2021"
+        title: "Developer",
+        description: "A front-end developer specializes in building the front end, or client-side, of a web appkication.",
+        employer: "Vennage",
+        employer_email: "maki7.mk@gmail.com",
+        category: "IT",
+        expiration_date: "01.06.2021"
     },
     {
         title: "Project Manager",
@@ -39,4 +60,4 @@ JobAdvert.create([
         category: "Catering",
         expiration_date: "25.06.2021"
     }
-  ])
+])
