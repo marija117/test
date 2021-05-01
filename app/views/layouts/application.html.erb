@@ -14,7 +14,14 @@
 
   <body>
     <div class="container">
-      <%= yield %>
+      <div class="row">
+        <div class="col-12">
+          <%= render partial: 'shared/navigation_bar' %>
+          <div class="my-3">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
