@@ -30,7 +30,12 @@
   <%= @job_advert.expiration_date %>
 </p>
 
+<%= link_to 'Edit', edit_job_advert_path(@job_advert) %> |
+<%= link_to 'Back', job_adverts_path %>
+
 <form action="/job_applications" accept-charset="UTF-8" method="post">
+  <input type="hidden" name="authenticity_token">
+
   <div class="mb-3">
     <label for="applicant_full_name" class="form-label">Full name</label>
     <input type="text" class="form-control" name=job_application[applicant_full_name] id="job_application_applicant_full_name">
