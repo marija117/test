@@ -30,42 +30,10 @@
   <%= @job_advert.expiration_date %>
 </p>
 
-<%= link_to 'Edit', edit_job_advert_path(@job_advert) %> |
-<%= link_to 'Back', job_adverts_path %>
 
-<form action="/job_applications" accept-charset="UTF-8" method="post">
-  <input type="hidden" name="authenticity_token">
+<ul>
+  <li><%= link_to "Edit", edit_job_advert_path(@job_advert) %></li>
+  <li><%= link_to 'Back', job_adverts_path %></li>
+</ul>
 
-  <div class="mb-3">
-    <label for="applicant_full_name" class="form-label">Full name</label>
-    <input type="text" class="form-control" name=job_application[applicant_full_name] id="job_application_applicant_full_name">
-  </div>
-
-  <div class="mb-3">
-    <label for="date_of_birth" class="form-label">Date of birth</label>
-    <input type="date" class="form-control" name=job_application[date_of_birth] id="job_application_date_of_birth">
-  </div>
-
-  <div class="mb-3">
-    <label for="email" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="job_application_email" name=job_application[email] aria-describedby="emailHelp">
-  </div>
-
-  <div class="mb-3">
-    <label for="phone_number" class="form-label">Phone number</label>
-    <input type="text" class="form-control" name=job_application[phone_number] id="job_application_phone_number">
-  </div>
-
-  <div class="mb-3">
-    <label for="address" class="form-label">Address</label>
-    <input type="text" class="form-control" name=job_application[address] id="job_application_address">
-  </div>
-  
-  <div class="mb-3">
-    <label for="qualification" class="form-label">Qualification</label>
-    <input type="text" class="form-control" name=job_application[qualification] id="job_application_qualification">
-    <%= hidden_field_tag(:job_advert_id,  @job_advert.id) %>
-  </div>
-
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<%= render :template => 'job_applications/new' %>
