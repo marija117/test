@@ -21,14 +21,13 @@
       <tr>
         <th scope="row"><%= application.id %></th>
         <td><%= application.applicant_full_name %></td>
-        <td><%= application.date_of_birth %></td>
+        <td><%= application.date_of_birth.strftime("%d/%m/%Y") %></td>
         <td><%= application.email %></td>
         <td><%= application.phone_number %></td>
         <td><%= application.address %></td>
         <td><%= application.qualification %></td>
-        <td><%= link_to 'Show', application %></td>
-        <td><%= link_to 'Edit', edit_job_application_path(application) %></td>
-        <td><%= link_to 'Destroy', application, method: :delete, data: { confirm: 'Are you sure?' } %></td>   
+        <td><%= link_to 'Show', job_advert_job_application_path(application.job_advert, application) %></td>
+        <td><%= link_to 'Destroy', job_advert_job_application_path(application.job_advert, application), method: :delete, data: { confirm: 'Are you sure?' } %></td>   
       </tr>
     <% end %>
   </tbody>
