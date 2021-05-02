@@ -3,10 +3,11 @@ class JobAdvertsController < ApplicationController
     before_action :set_job_advert, only: [:show, :edit, :update, :destroy]
 
     def index
-      @job_adverts = JobAdvert.page(params[:page]).per(5)
+        @job_adverts = JobAdvert.page(params[:page]).per(5)
     end
 
     def show
+        @job_application = @job_advert.job_applications.build
     end
   
     def new
@@ -47,6 +48,6 @@ class JobAdvertsController < ApplicationController
     end
 
     def job_advert_params
-        params.permit(:title, :description, :employer, :employer_email, :category, :expiration_date)
+        params.require(:job_advert).permit(:title, :description, :employer, :employer_email, :category, :expiration_date)
     end
 end
